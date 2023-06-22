@@ -49,6 +49,8 @@ def get_birthdays_per_week(users):
 
 if __name__ == "__main__":
 
+    lang = ""
+
     lang = locale.getdefaultlocale()[0]
     locale.setlocale(locale.LC_ALL, lang) 
 
