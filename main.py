@@ -44,7 +44,8 @@ def print_users(weekdays: dict) -> None:
                     row = user["name"]
                 if isinstance(user['birthday'], date):
                     user_years = int( (datetime.now().date() -  user['birthday'] ).days / 365 )
-                    row += f", {user_years}"
+                    user_years_ten = "*" if not (user_years % 10) else ""
+                    row += f", {user_years}{user_years_ten}"
                 userlist.append(row)
         print(f"{weekday} : {userlist}")
         
