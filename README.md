@@ -1,67 +1,69 @@
 # goit_python_core_hw_08
 
 Source data:
+
 ```
 [
-    {'name': 'Зиновій Жук', 'birthday': datetime.date(2000, 7, 14)},
-    {'name': 'Віра Проценко', 'birthday': datetime.date(1985, 7, 11)},
-    {'name': 'пані Амалія Безбородько', 'birthday': datetime.date(1965, 7, 11)},
-    {'name': 'Соломія Бандура', 'birthday': datetime.date(2000, 7, 3)},
-    {'name': 'Зиновій Андрусенко', 'birthday': datetime.date(1972, 6, 29)},
-    {'name': 'Гордій Девдюк', 'birthday': datetime.date(2002, 6, 25)},
-    {'name': 'Георгій Шведченко', 'birthday': datetime.date(1974, 7, 17)},
-    {'name': 'Сніжана Нестайко', 'birthday': datetime.date(1975, 6, 29)},
-    {'name': 'Василь Терещенко', 'birthday': datetime.date(1994, 7, 11)},
-    {'name': 'Аліна Їжак', 'birthday': datetime.date(1973, 7, 14)},
-    {'name': 'Лілія Шамрай', 'birthday': datetime.date(1980, 7, 8)},
-    {'name': 'Августин Терещенко', 'birthday': datetime.date(2004, 7, 8)},
-    {'name': 'Соломія Засуха', 'birthday': datetime.date(1983, 6, 24)},
-    {'name': 'Володимир Дейсун', 'birthday': datetime.date(1979, 7, 22)},
-    {'name': 'Лукʼян Ґерус', 'birthday': datetime.date(1986, 7, 5)},
-    {'name': 'пані Альбіна Засенко', 'birthday': datetime.date(1994, 7, 20)},
-    {'name': 'Анжела Гаврилюк', 'birthday': datetime.date(1964, 6, 29)},
-    {'name': 'Лесь Вовк', 'birthday': datetime.date(1996, 7, 20)},
-    {'name': 'Камілла Алексюк', 'birthday': datetime.date(1979, 7, 8)},
-    {'name': 'Еріка Лисенко', 'birthday': datetime.date(1992, 7, 16)},
-    {'name': 'Пилип Чміль', 'birthday': datetime.date(2001, 7, 1)},
-    {'name': 'Миколай Вовк', 'birthday': datetime.date(1981, 6, 24)},
-    {'name': 'Ярослав Дзюба', 'birthday': datetime.date(2003, 7, 4)},
-    {'name': 'Одарка Верховинець', 'birthday': datetime.date(1972, 7, 12)},
-    {'name': 'Гаврило Деревʼянко', 'birthday': datetime.date(1996, 7, 15)},
-    {'name': 'Данна Ткаченко', 'birthday': datetime.date(2001, 7, 18)},
-    {'name': 'пані Клавдія Гресь', 'birthday': datetime.date(1994, 7, 18)},
-    {'name': 'пан Соломон Гук', 'birthday': datetime.date(1980, 7, 6)},
-    {'name': 'Мартин Матвієнко', 'birthday': datetime.date(1967, 7, 8)},
-    {'name': 'Симон Безбородьки', 'birthday': datetime.date(1997, 6, 25)},
-    {'name': 'Миколай Юрчук', 'birthday': datetime.date(1977, 6, 29)},
-    {'name': 'Аніта Дробаха', 'birthday': datetime.date(1974, 6, 30)},
-    {'name': 'Теодор Корсун', 'birthday': datetime.date(1980, 7, 11)},
-    {'name': 'Соломон Оберемко', 'birthday': datetime.date(1964, 7, 1)},
-    {'name': 'Руслан Колісниченко', 'birthday': datetime.date(1959, 6, 27)},
-    {'name': 'Ярослава Тихий', 'birthday': datetime.date(1974, 7, 13)},
-    {'name': 'Ірина Перепелиця', 'birthday': datetime.date(1963, 7, 8)},
-    {'name': 'Іван Дубина', 'birthday': datetime.date(1976, 6, 25)},
-    {'name': 'Захар Москаль', 'birthday': datetime.date(1991, 7, 11)},
-    {'name': 'Маруся Шевченко', 'birthday': datetime.date(1967, 7, 7)},
-    {'name': 'Леонід Скорик', 'birthday': datetime.date(1965, 6, 28)},
-    {'name': 'пані Варвара Сіробаба', 'birthday': datetime.date(2000, 7, 18)},
-    {'name': 'Михайлина Гаврилець', 'birthday': datetime.date(1981, 7, 17)},
-    {'name': 'Богдан Запорожець', 'birthday': datetime.date(1962, 7, 8)},
-    {'name': 'Одарка Петрик', 'birthday': datetime.date(1995, 7, 19)},
-    {'name': 'Варвара Єрошенко', 'birthday': datetime.date(1984, 6, 27)},
-    {'name': 'Віолетта Девдюк', 'birthday': datetime.date(1975, 6, 30)},
-    {'name': 'Едуард Влох', 'birthday': datetime.date(1985, 7, 5)},
-    {'name': 'пан Павло Вдовиченко', 'birthday': datetime.date(2001, 7, 22)},
-    {'name': 'Феофан Гаврилишин', 'birthday': datetime.date(1982, 7, 21)}
+    {'name': 'Марина Запорожець', 'birthday': datetime.date(1992, 7, 5)},
+    {'name': 'Віталій Сімашкевич', 'birthday': datetime.date(1985, 7, 5)},
+    {'name': 'Надія Лавренко', 'birthday': datetime.date(1983, 7, 18)},
+    {'name': 'Оксана Вдовенко', 'birthday': datetime.date(1974, 7, 19)},
+    {'name': 'Амалія Цимбал', 'birthday': datetime.date(1959, 6, 27)},
+    {'name': 'Ада Чалий', 'birthday': datetime.date(1997, 7, 15)},
+    {'name': 'Назар Пʼятаченко', 'birthday': datetime.date(1977, 7, 14)},
+    {'name': 'Орхип Атрощенко', 'birthday': datetime.date(1999, 7, 15)},
+    {'name': 'Галина Вернидуб', 'birthday': datetime.date(1980, 7, 3)},
+    {'name': 'Дарина Малик', 'birthday': datetime.date(1968, 7, 16)},
+    {'name': 'Ірена Христенко', 'birthday': datetime.date(1971, 6, 25)},
+    {'name': 'Юхим Конопленко', 'birthday': datetime.date(1992, 7, 16)},
+    {'name': 'пані Христина Баран', 'birthday': datetime.date(1996, 7, 15)},
+    {'name': 'Оксенія Дробʼязко', 'birthday': datetime.date(1992, 6, 24)},
+    {'name': 'Камілла Микитюк', 'birthday': datetime.date(1986, 7, 13)},
+    {'name': 'Тетяна Гузенко', 'birthday': datetime.date(1986, 7, 16)},
+    {'name': 'Валентина Романець', 'birthday': datetime.date(1980, 6, 24)},
+    {'name': 'Віра Жадан', 'birthday': datetime.date(1992, 6, 24)},
+    {'name': 'Аврелій Іваничук', 'birthday': datetime.date(1992, 7, 17)},
+    {'name': 'Роман Теличенко', 'birthday': datetime.date(1978, 7, 10)},
+    {'name': 'Ада Заїка', 'birthday': datetime.date(1982, 7, 17)},
+    {'name': 'Віталій Вівчаренко', 'birthday': datetime.date(1973, 7, 12)},
+    {'name': 'Людмила Кармалюк', 'birthday': datetime.date(1993, 6, 29)},
+    {'name': 'Арсен Дацюк', 'birthday': datetime.date(1989, 6, 30)},
+    {'name': 'Орест Піддубний', 'birthday': datetime.date(1958, 7, 19)},
+    {'name': 'Тереза Конопля', 'birthday': datetime.date(1974, 6, 30)},
+    {'name': 'Роксолана Рева', 'birthday': datetime.date(1980, 7, 19)},
+    {'name': 'Геннадій Тарасенко', 'birthday': datetime.date(1998, 7, 14)},
+    {'name': 'пані Камілла Лазаренко', 'birthday': datetime.date(1997, 7, 3)},
+    {'name': 'пані Лілія Килимник', 'birthday': datetime.date(1994, 7, 11)},
+    {'name': 'Вʼячеслав Шиян', 'birthday': datetime.date(1986, 6, 30)},
+    {'name': 'Юстина Рябченко', 'birthday': datetime.date(1965, 6, 24)},
+    {'name': 'Світлана Якименко', 'birthday': datetime.date(1996, 7, 19)},
+    {'name': 'Варфоломій Баклан', 'birthday': datetime.date(1991, 7, 19)},
+    {'name': 'Єва Абраменко', 'birthday': datetime.date(1978, 7, 7)},
+    {'name': 'Олесь Левченко', 'birthday': datetime.date(2001, 7, 9)},
+    {'name': 'Гліб Тимчук', 'birthday': datetime.date(1985, 6, 26)},
+    {'name': 'Варфоломій Іваненко', 'birthday': datetime.date(1973, 7, 20)},
+    {'name': 'Марʼяна Медведенко', 'birthday': datetime.date(1989, 7, 15)},
+    {'name': 'Федір Канівець', 'birthday': datetime.date(1967, 7, 12)},
+    {'name': 'Назар Титаренко', 'birthday': datetime.date(1961, 6, 27)},
+    {'name': 'пан Богодар Опанасенко', 'birthday': datetime.date(1977, 7, 20)},
+    {'name': 'Петро Комар', 'birthday': datetime.date(1961, 7, 6)},
+    {'name': 'Іван Скорик', 'birthday': datetime.date(1977, 7, 6)},
+    {'name': 'Валерій Чалий', 'birthday': datetime.date(1963, 6, 28)},
+    {'name': 'Михайлина Романенко', 'birthday': datetime.date(1961, 7, 16)},
+    {'name': 'Богуслава Воблий', 'birthday': datetime.date(1995, 7, 12)},
+    {'name': 'Тимофій Щорс', 'birthday': datetime.date(1975, 7, 9)},
+    {'name': 'Софія Перебийніс', 'birthday': datetime.date(1967, 7, 3)},
+    {'name': 'Світлана Корж', 'birthday': datetime.date(1958, 6, 28)}
 ]
 ```
-Result:
-```
-понеділок, 26.06.2023 : ['Гордій Девдюк (2002-06-25), 21', 'Соломія Засуха (1983-06-24), 40', 'Миколай Вовк (1981-06-24), 42', 'Симон 
-Безбородьки (1997-06-25), 26', 'Іван Дубина (1976-06-25), 47']
-вівторок, 27.06.2023 : ['Руслан Колісниченко, 64', 'Варвара Єрошенко, 39']
-середа, 28.06.2023 : ['Леонід Скорик, 58']
-четвер, 29.06.2023 : ['Зиновій Андрусенко, 51', 'Сніжана Нестайко, 48', 'Анжела Гаврилюк, 59', 'Миколай Юрчук, 46']
-п'ятниця, 30.06.2023 : ['Аніта Дробаха, 49', 'Віолетта Девдюк, 48']
-```
 
+Result:
+
+```
+понеділок, 26.06.2023 : ['Ірена Христенко (25.06.1971), 52', 'Оксенія Дробʼязко (24.06.1992), 31', 'Валентина Романець (24.06.1980),
+43', 'Віра Жадан (24.06.1992), 31', 'Юстина Рябченко (24.06.1965), 58', 'Гліб Тимчук, 38']
+вівторок, 27.06.2023 : ['Амалія Цимбал, 64', 'Назар Титаренко, 62']
+середа, 28.06.2023 : ['Валерій Чалий, 60', 'Світлана Корж, 65']
+четвер, 29.06.2023 : ['Людмила Кармалюк, 30']
+п'ятниця, 30.06.2023 : ['Арсен Дацюк, 34', 'Тереза Конопля, 49', 'Вʼячеслав Шиян, 37']s
+```
