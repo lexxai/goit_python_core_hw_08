@@ -4,6 +4,7 @@ from datetime import datetime,timedelta,date
 from collections import defaultdict
 import locale 
 from  random import Random
+from operator import itemgetter
 #import calendar
 
 
@@ -31,8 +32,20 @@ def print_users(weekdays: dict) -> None:
     for weekday, users in sorted(weekdays.items()):
         if isinstance(weekday, date) or isinstance(weekday, datetime):
             weekday = weekday.strftime("%A, %x")
-        userlist = [user["name"] + "*" if user.get("weekend") else user["name"]
-                    for user in users]
+            userlist = []
+            for user in users:
+                user = {k: v for k, v in sorted(
+                    user.items(), key=itemgetter(0))}
+
+                if user.get("weekend"):
+                    row = user["name"] + \
+                    f" ({user['birthday']})" 
+                else:
+                    row = user["name"]
+                if isinstance(user['birthday'], date):
+                    user_years = int( (datetime.now().date() -  user['birthday'] ).days / 365 )
+                    row += f", {user_years}"
+                userlist.append(row)
         print(f"{weekday} : {userlist}")
         
 
@@ -41,8 +54,8 @@ def print_users(weekdays: dict) -> None:
 def get_birthdays_per_week(users: list | tuple) -> list:
 
     result = defaultdict(list)
-    #current_datetime = datetime.now().date()
-    current_datetime = datetime(2022, 12, 29).date()
+    current_datetime = datetime.now().date()
+    #current_datetime = datetime(2022, 12, 29).date()
     curr_week = current_datetime.weekday()
     start_weeks_interval = timedelta(days=5-curr_week)
     end_weeks_interval = timedelta(days=6)
@@ -84,14 +97,13 @@ if __name__ == "__main__":
 
 
     f = Faker(lang)
-    #current_date = datetime.now().date() 
-
-    current_date = datetime(2022,12,29).date()
+    current_date = datetime.now().date() 
+    #current_date = datetime(2022,12,29).date()
     
 #                "birthday": (current_date + timedelta(days=Random().randrange(1,30))).strftime("%Y-%m-%d")
     users = [ { "name": f.name() ,  
                 "birthday": (current_date.replace(year=Random().randrange(current_date.year-65, current_date.year-18))
-                + timedelta(days=Random().randrange(1, 30))).strftime("%x")
+                + timedelta(days=Random().randrange(1, 30))) #.strftime("%x")
             } for i in range(50) ]
 
     print(users)
