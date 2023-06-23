@@ -4,7 +4,7 @@ from datetime import datetime,timedelta,date
 from collections import defaultdict
 import locale 
 from  random import Random
-import calendar
+#import calendar
 
 
 def parse_data(bd: date | datetime | str) -> date | None:
@@ -31,7 +31,8 @@ def print_users(weekdays: dict) -> None:
     for weekday, users in sorted(weekdays.items()):
         if isinstance(weekday, date) or isinstance(weekday, datetime):
             weekday = weekday.strftime("%A, %x")
-        userlist = [user['name'] for user in users]
+        userlist = [user["name"] + "*" if user.get("weekend") else user["name"]
+                    for user in users]
         print(f"{weekday} : {userlist}")
         
 
@@ -40,7 +41,8 @@ def print_users(weekdays: dict) -> None:
 def get_birthdays_per_week(users: list | tuple) -> list:
 
     result = defaultdict(list)
-    current_datetime = datetime.now().date()
+    #current_datetime = datetime.now().date()
+    current_datetime = datetime(2022, 12, 29).date()
     curr_week = current_datetime.weekday()
     start_weeks_interval = timedelta(days=5-curr_week)
     end_weeks_interval = timedelta(days=6)
@@ -53,12 +55,15 @@ def get_birthdays_per_week(users: list | tuple) -> list:
         if not user_bd :
             print(f"format of date undefined, skip, user {user['name']}")
             continue
-        user_bd_this_year = user_bd.replace(year=current_datetime.year)
+        birthday_year = current_datetime.year
+        if user_bd.month == 1 and current_datetime.month == 12:
+            birthday_year += 1
+        user_bd_this_year = user_bd.replace(year=birthday_year)
         if  start_week <= user_bd_this_year <= end_week:
             user_week = user_bd_this_year.weekday()
-            user_bd_day  = calendar.day_name[user_week]
+            #user_bd_day  = calendar.day_name[user_week]
             if user_week >= 5:
-                user['weekend'] = user_bd_day
+                user['weekend'] = True
                 day = next_monday
             else:
                 day = user_bd_this_year
@@ -79,15 +84,17 @@ if __name__ == "__main__":
 
 
     f = Faker(lang)
-    #current_date = datetime.now().date()
-    current_date = datetime.now().date()
+    #current_date = datetime.now().date() 
+
+    current_date = datetime(2022,12,29).date()
     
 #                "birthday": (current_date + timedelta(days=Random().randrange(1,30))).strftime("%Y-%m-%d")
-    users = ( { "name": f.name() ,  
-                "birthday": (current_date + timedelta(days=Random().randrange(1, 30))).strftime("%d.%m.%Y")
-            } for i in range(50) )
+    users = [ { "name": f.name() ,  
+                "birthday": (current_date.replace(year=Random().randrange(current_date.year-65, current_date.year-18))
+                + timedelta(days=Random().randrange(1, 30))).strftime("%x")
+            } for i in range(50) ]
 
-    #print(users)
+    print(users)
     birthday_result = get_birthdays_per_week(users)
     print_users(birthday_result)
 
