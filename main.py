@@ -39,7 +39,7 @@ def print_users(weekdays: dict) -> None:
 
                 if user.get("weekend"):
                     row = user["name"] + \
-                    f" ({user['birthday']})" 
+                        f" ({user['birthday'].strftime('%x')})"
                 else:
                     row = user["name"]
                 if isinstance(user['birthday'], date):
