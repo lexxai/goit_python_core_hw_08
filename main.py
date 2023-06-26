@@ -106,9 +106,15 @@ if __name__ == "__main__":
     #current_date = datetime(2022,12,29).date()
     
 #                "birthday": (current_date + timedelta(days=Random().randrange(1,30))).strftime("%Y-%m-%d")
+    
+    # users = [ { "name": f.name() ,  
+    #             "birthday": (current_date.replace(year=Random().randint(current_date.year-65, current_date.year-18))
+    #             + timedelta(days=Random().randrange(1, 30))) #.strftime("%x")
+    #         } for i in range(50) ]
+    
     users = [ { "name": f.name() ,  
-                "birthday": (current_date.replace(year=Random().randrange(current_date.year-65, current_date.year-18))
-                + timedelta(days=Random().randrange(1, 30))) #.strftime("%x")
+                "birthday": (current_date.replace(year=f.date_of_birth(minimum_age=18, maximum_age=65).year)
+                + timedelta(days=Random().randint(1, 30))) #.strftime("%x")
             } for i in range(50) ]
 
     print(users)
