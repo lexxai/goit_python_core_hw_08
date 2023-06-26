@@ -5,7 +5,7 @@ from collections import defaultdict
 import locale 
 from  random import Random
 from operator import itemgetter
-#import calendar
+#from dateutil.relativedelta import relativedelta
 
 
 def parse_data(bd: date | datetime | str) -> date | None:
@@ -43,7 +43,10 @@ def print_users(weekdays: dict) -> None:
                 else:
                     row = user["name"]
                 if isinstance(user['birthday'], date):
-                    user_years = int( (datetime.now().date() -  user['birthday'] ).days / 365 )
+                    user_years = int( datetime.now().year - user['birthday'].year)
+                    if user['birthday'].month == 1 and datetime.now().month == 12:
+                        user_years += 1
+                    #user_years = int( (datetime.now().date() -  user['birthday'] ).days / 365 )
                     user_years_ten = "*" if not (user_years % 10) \
                                          or not (user_years % 5) else ""
                     row += f", {user_years}{user_years_ten}"
